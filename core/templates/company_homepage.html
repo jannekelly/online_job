@@ -1,0 +1,53 @@
+{% extends 'company_navbar.html' %}
+
+{% block title %} Empresa  {% endblock %}
+{% block home %} active {% endblock %}
+{% block css %}
+{% endblock %}
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+
+            <form class="container mt-4" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <div class="row mt-4">
+                    <div class="form-group col-md-12">
+                        <label>Usuário</label>
+                        <input type="text" class="form-control" name="username" id="username"
+                            value="{{empresa.user.username}}" readonly>
+                    </div>
+                </div>
+
+
+
+                <div class="row mt-4">
+                    <div class="form-group col-md-6">
+                        <label>Email </label>
+                        <input type="email" class="form-control" name="email" id="email" value="{{empresa.user.email}}" required>
+                    </div>
+
+                </div>
+
+
+
+
+                <input type="submit" value="Submit" class="btn mt-4" style="background-color: #4f868c; color: white; font-size: larger; width: 8rem;">
+            </form>
+
+        </div>
+
+    </div>
+</div>
+{% endblock %}
+{% block js %}
+<script>
+    {% if alert %}
+    alert("Atualizado com sucesso!")
+    window.location = "/company_homepage"
+    {% endif %}
+</script>
+{% endblock %}
+

@@ -1,0 +1,55 @@
+{% extends 'company_navbar.html' %}
+
+{% block title %} Adicionar Vaga {% endblock %}
+{% block add_job %} active {% endblock %}
+{% block css %}
+{% endblock %}
+{% block body %}
+<form class="container mt-3" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <div class="row">
+        <div class="form-group col-md-12">
+            <label>Nome Vaga</label>
+            <input type="text" class="form-control" name="job_title" id="job_title" placeholder="Informe o nome da vaga" required>
+        </div>
+    </div>
+    
+
+
+    <div class="row mt-3">
+
+        <div class="form-group col-md-6">
+            <label>Salario </label>
+            <input type="tel" class="form-control" name="salary" id="salary" placeholder="Informe o salario" required>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="form-group col-md-12">
+            <label>Requisitos</label>
+            <input type="text" class="form-control" name="skills" id="skills" placeholder="Informe os requisitos da vaga" required>
+        </div>
+        </div>
+    
+
+    </div>
+
+    <div class="row mt-3">
+        <div class="form-group col-md-12">
+            <label>Escolaridade Minima</label>
+           <input name="escolaridade" id="escolaridade" class="form-control" cols="30" rows="4" placeholder="Escolaridade" required>
+        </div>
+    </div>
+<input type="submit" value="Submit" class="btn mt-3" style="background-color: #4f868c; color: white; font-size: larger; width: 8rem;">
+</form>
+{% endblock %}
+{% block js %}
+<script>
+    {% if alert %}
+    alert("Vaga adicionada com sucesso!.")
+    window.location = "/job_list"
+    {% endif %}
+</script>
+{% endblock %}
+

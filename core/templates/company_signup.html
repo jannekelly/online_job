@@ -1,0 +1,35 @@
+{% extends 'basic.html' %}
+
+{% block title %} Signup Empresa{% endblock %}
+{% block company_login %} active {% endblock %}
+{% block css %}
+{% endblock %}
+{% block body %}
+<form class="container mt-4" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    
+    <div class="row mt-4">
+        <div class="form-group col-md-6">
+            <label>Senha</label>
+            <input type="password" class="form-control" name="password1" id="password1" placeholder="informe a senha">
+        </div>
+        <div class="form-group col-md-6">
+            <label>Confime senha</label>
+            <input type="password" class="form-control" name="password2" id="password2" placeholder="Confirme senha">
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="form-group col-md-6">
+            <label>Email</label>
+            <input type="email" class="form-control" name="email" id="email" placeholder="informe email">
+        </div>
+    </div>
+
+
+
+    <br>
+    <input type="submit" value="Submit" class="btn" style="background-color: #4f868c; color: white; font-size: larger; width: 8rem;">
+</form>
+{% endblock %}

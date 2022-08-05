@@ -1,0 +1,36 @@
+{% extends 'company_navbar.html' %}
+
+{% block title %}Candidaturas {% endblock %}
+{% block all_applicants %} active {% endblock %}
+{% block css %}
+{% endblock %}
+{% block body %}
+<div class="container mt-4">
+    <table class="table table-hover" id="example">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome da Vaga</th>
+                <th>Candidato</th>
+                <th>Experiência</th>
+                <th>Pretenção Salarial</th>
+                <th>Escololaridade</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in candidatura %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{i.vaga.nome}}</td>
+                <td>{{i.candidato}}</td>
+                <td>{{i.experiencia}}</td>
+                <td>{{i.pretencao_salarial}}</td>
+                <td>{{i.escolaridade}}</td>
+                <td><a href="#" class="btn"><i class="fa fa-trash"></i></a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+{% endblock %}
