@@ -8,6 +8,7 @@ Esse projeto trata-se de um simples site para oferta e busca de vagas de emprego
 Para executar esse projeto é necessário que esteja com um ambiente virtual rodando, para isso, dentro do caminho do projeto siga os seguintes comandos no terminal : 
 
 ```sh
+python3 -m venv venv
 cd  .\venv
 .\Scripts\activate
 ```
